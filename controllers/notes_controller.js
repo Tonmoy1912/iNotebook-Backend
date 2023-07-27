@@ -73,7 +73,7 @@ module.exports.deletenote=async function(req,res){
     try{
         //find the note and delete
         let note=await Note.findById(req.params.id);
-        console.log(req.params.id);
+        // console.log(req.params.id);
         if(!note){
             return res.status(404).json({error:"Not found"});
         }
