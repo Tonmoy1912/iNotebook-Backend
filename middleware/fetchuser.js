@@ -9,8 +9,9 @@ module.exports=async function fetchuser(req,res,next){
         return res.status(401).json({error:"Please authenticate user using valid token"});
     }
     try{
+        //it returns the payload
         const data=jwt.verify(token,JWT_SECRET);
-        console.log(data);
+        // console.log(data);
         req.user=data.user;
         next();
     }

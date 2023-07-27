@@ -1,6 +1,10 @@
 const mongoose=require("mongoose");
 
 const NoteSchema=new mongoose.Schema({
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'users'
+    },
     title:{
         type:String,
         required:true
@@ -20,6 +24,6 @@ const NoteSchema=new mongoose.Schema({
 });
 
 const Note=new mongoose.model('notes',NoteSchema);
-Note.createIndexes();//to maintain uniqueness
+// Note.createIndexes();//to maintain uniqueness
 
 module.exports=Note;
