@@ -50,7 +50,7 @@ module.exports.updatenote=async function(req,res){
         if(tag){newnote.tag=tag}
         //find the note and update
         let note=await Note.findById(req.params.id);
-        console.log(req.params.id);
+        //console.log(req.params.id);
         if(!note){
             return res.status(404).json({error:"Not found"});
         }
