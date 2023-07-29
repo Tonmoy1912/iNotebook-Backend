@@ -1,6 +1,15 @@
 const mongoose=require("mongoose");
 
-mongoose.connect('mongodb://127.0.0.1:27017/inotebook')
+// mongo-url for local: 'mongodb://127.0.0.1:27017/inotebook'
+
+// const temp={
+//     useNewUrlParser:true,
+//     useCreateIndex:true,
+//     useUnifiedTopology:true,
+//     useFindAndModify:false
+// };
+
+mongoose.connect(process.env.MONGO_ATLAS_URL)
 .then(()=>{
     console.log("Successfully connected to database");
 })

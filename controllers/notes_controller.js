@@ -14,7 +14,7 @@ module.exports.fetchallnotes=async function(req,res){
         return res.status(200).json({notes});
     }
     catch(err){
-        console.log("Error in fetching the notes:",err.message);
+        // console.log("Error in fetching the notes:",err.message);
         return res.status(500).json({error:"Internal server error"});
     }
 };
@@ -35,7 +35,7 @@ module.exports.addnote=async function(req,res){
         return res.status(200).json({success:true,note});
     }
     catch(err){
-        console.log("Error in adding the notes:",err.message);
+        // console.log("Error in adding the notes:",err.message);
         return res.status(500).json({success:false,error:"Internal server error"});
     }
 };
@@ -62,7 +62,7 @@ module.exports.updatenote=async function(req,res){
         return res.status(200).json({success:true,note,message:"Noted updated successfully"});
     }
     catch(err){
-        console.log("Error in updating the notes:",err.message);
+        // console.log("Error in updating the notes:",err.message);
         return res.status(500).json({success:false,error:"Internal server error"});
     }
 };
@@ -86,7 +86,7 @@ module.exports.deletenote=async function(req,res){
         return res.status(200).json({success:true,message:"Note deleted successfully"});
     }
     catch(err){
-        console.log("Error in deleting the notes:",err.message);
+        // console.log("Error in deleting the notes:",err.message);
         return res.status(500).json({success:false,error:"Internal server error"});
     }
 };

@@ -1,6 +1,6 @@
 const jwt=require("jsonwebtoken");
 
-const JWT_SECRET="inotebook";
+const JWT_SECRET=process.env.JWT_SECRET;
 
 module.exports=async function fetchuser(req,res,next){
     //get userr from the auth token and add id to the res object
